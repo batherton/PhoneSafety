@@ -21,16 +21,22 @@ var app = {
 };
 
 	function onTrackingSuccess(position) {
+		 if (position.coords.speed > 0){
+			 var MilesPH = Math.round(position.coords.speed * 3600 / 1610.3*1000)/1000;
+			 document.getElementById('Speed').innerHTML = MilesPH;
+		 }else{
+			 document.getElementById('Speed').innerHTML = "0"
+		 }
 		 document.getElementById('Longitude').innerHTML = position.coords.longitude;
 		 document.getElementById('Latitude').innerHTML = position.coords.latitude;
 		 document.getElementById('Altitude').innerHTML = position.coords.altitude;
 		 document.getElementById('Accuracy').innerHTML = position.coords.accuracy;
 		 document.getElementById('AltitudeAccuracy').innerHTML = position.coords.altitudeAccuracy;
 		 document.getElementById('Heading').innerHTML = position.coords.heading;
-		 document.getElementById('Speed').innerHTML = position.coords.speed;
+		 //document.getElementById('Speed').innerHTML = position.coords.speed;
 	 	 document.getElementById('Timestamp').innerHTML = position.timestamp;
 
-	 	 if (position.coords.speed > 14){
+	 	 if (position.coords.speed > 6.71){
 			 document.getElementById('systemstatus').style.backgroundColor="red";
 			 document.getElementById('systemstatus').innerHTML = "Calls and Texting Disabled"
 		 }else{

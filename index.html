@@ -114,13 +114,28 @@
 		  <td id="ConnectionType" align="left"></td>
 		 </tr>
 		</table>
-		<button onclick="window.plugins.headsetdetection.detect(function(detected) {alert(detected)})">headphone detected?</button>
+		<button onclick="detectHeadphones()">headphone detected?</button>
 		<br><br><br><br><br><br>
         </div>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
             app.initialize();
+        </script>
+
+        <script>
+			function detectHeadphones(){
+			  window.plugins.headsetdetection.detect(function(detected){
+			    if(!detected){
+			      //No headphone detected
+			      alert("No headphone detected");
+
+			      // Set your variables here
+			    }
+			  })
+			};
+
+			//window.plugins.headsetdetection.detect(function(detected) {alert(detected)})
         </script>
     </body>
 </html>
