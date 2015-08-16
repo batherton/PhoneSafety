@@ -125,14 +125,13 @@
 
         <script>
 			function detectHeadphones(){
-			  window.plugins.headsetdetection.detect(function(detected){
-			    if(!detected){
-			      //No headphone detected
-			      alert("No headphone detected");
-
-			      // Set your variables here
-			    }
-			  })
+			  window.plugins.headsetdetection.detect(
+			  //function(detected){
+			  //  if(!detected){
+			  //    alert("No headphone detected");
+			  //  }
+			  //}
+			  )
 			};
 
 			//window.plugins.headsetdetection.detect(function(detected) {alert(detected)})
