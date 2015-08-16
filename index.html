@@ -10,8 +10,16 @@
         <link rel="stylesheet" type="text/css" href="css/index.css" />
     </head>
     <body>
-        <div class="app2">
-<br><br>
+    	<div id="TopAppMenu" class="TopMenu">
+		<table width="100%" cellpadding="0" cellspacing="0" border="0">
+		 <tr>
+		  <td height="75" align="center" id="systemstatus">Checking</td>
+		 </tr>
+		</table>
+    	</div>
+
+        <div class="MainDiv" id="MainDiv">
+		<br><br>
 		<table width="100%" cellpadding="0" cellspacing="0" border="0">
 		 <tr>
 		  <td height="75" align="center" id="systemstatus">Checking</td>
@@ -111,9 +119,8 @@
 		  <td id="ConnectionType" align="left"></td>
 		 </tr>
 		</table>
-
-<button onclick="window.plugins.headsetdetection.detect(function(detected) {alert(detected)})">headphone detected?</button>
-<br><br><br><br><br><br>
+		<button onclick="window.plugins.headsetdetection.detect(function(detected) {alert(detected)})">headphone detected?</button>
+		<br><br><br><br><br><br>
         </div>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
