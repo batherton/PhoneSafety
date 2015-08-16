@@ -37,11 +37,24 @@ var app = {
 	 	 document.getElementById('Timestamp').innerHTML = position.timestamp;
 
 	 	 if (position.coords.speed > 6.71){
-			 document.getElementById('systemstatus').style.backgroundColor="red";
-			 document.getElementById('systemstatus').innerHTML = "Calls and Texting Disabled"
+			 window.plugins.headsetdetection.detect(
+			 function(detected){
+			   if(!detected){
+			     //alert("No headphone detected");
+			 	 document.getElementById('systemphonestatus').style.backgroundColor="red";
+			 	 document.getElementById('systemphonestatus').innerHTML = "Phone Disabled";
+			   }else{
+			 	 document.getElementById('systemphonestatus').style.backgroundColor="green";
+			 	 document.getElementById('systemphonestatus').innerHTML = "Phone Enabled";
+			   }
+			 })
+			 document.getElementById('systemtextstatus').style.backgroundColor="red";
+			 document.getElementById('systemtextstatus').innerHTML = "Texting Disabled";
 		 }else{
-			 document.getElementById('systemstatus').style.backgroundColor="green";
-			 document.getElementById('systemstatus').innerHTML = "Calls and Texting Enabled"
+			 document.getElementById('systemtextstatus').style.backgroundColor="green";
+			 document.getElementById('systemtextstatus').innerHTML = "Texting Enabled";
+			 document.getElementById('systemphonestatus').style.backgroundColor="green";
+			 document.getElementById('systemphonestatus').innerHTML = "Phone Enabled";
 		 }
 	};
 
