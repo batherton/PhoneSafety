@@ -52,20 +52,14 @@ var app = {
 
 				function onTrackingSuccess(position) {
 
-						 document.getElementById('Longitude').value = position.coords.longitude;
-						 document.getElementById('Latitude').value = position.coords.latitude;
-						 document.getElementById('Altitude').value = position.coords.altitude;
-						 document.getElementById('Accuracy').value = position.coords.accuracy;
-						 document.getElementById('AltitudeAccuracy').value = position.coords.altitudeAccuracy;
-						 document.getElementById('Heading').value = position.coords.heading;
-						 document.getElementById('Speed').value = position.coords.speed;
-					 	 document.getElementById('Timestamp').value = position.timestamp;
-
-						 document.getElementById('DevicePlatform').value = device.platform;
-					 	 document.getElementById('DeviceModel').value = device.model;
-						 document.getElementById('DeviceID').value = device.uuid;
-						 document.getElementById('DeviceVersion').value = device.version;
-						 document.getElementById('ConnectionType').value = navigator.connection.type;
+						 document.getElementById('Longitude').innerHTML = position.coords.longitude;
+						 document.getElementById('Latitude').innerHTML = position.coords.latitude;
+						 document.getElementById('Altitude').innerHTML = position.coords.altitude;
+						 document.getElementById('Accuracy').innerHTML = position.coords.accuracy;
+						 document.getElementById('AltitudeAccuracy').innerHTML = position.coords.altitudeAccuracy;
+						 document.getElementById('Heading').innerHTML = position.coords.heading;
+						 document.getElementById('Speed').innerHTML = position.coords.speed;
+					 	 document.getElementById('Timestamp').innerHTML = position.timestamp;
 
 			        	 var http = new XMLHttpRequest();
 						 var url = "http://www.loadstatus.com/Tracking/";
@@ -145,6 +139,12 @@ var app = {
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
+
+		 document.getElementById('DevicePlatform').innerHTML = device.platform;
+		 document.getElementById('DeviceModel').innerHTML = device.model;
+		 document.getElementById('DeviceID').innerHTML = device.uuid;
+		 document.getElementById('DeviceVersion').innerHTML = device.version;
+		 document.getElementById('ConnectionType').innerHTML = navigator.connection.type;
         //var parentElement = document.getElementById(id);
         //var listeningElement = parentElement.querySelector('.listening');
         //var receivedElement = parentElement.querySelector('.received');
