@@ -45,7 +45,7 @@ var app = {
 			 	 document.getElementById('systemphonestatus').innerHTML = "Phone Disabled";
 			   }else{
 			 	 document.getElementById('systemphonestatus').style.backgroundColor="green";
-			 	 document.getElementById('systemphonestatus').innerHTML = "Phone Enabled";
+			 	 document.getElementById('systemphonestatus').innerHTML = "Headset Connected<br>Phone Enabled";
 			   }
 			 })
 			 document.getElementById('systemtextstatus').style.backgroundColor="red";
