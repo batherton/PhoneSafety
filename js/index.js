@@ -34,16 +34,19 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
-
-
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-
-
     var watchID = navigator.geolocation.watchPosition(onTrackingSuccess, onTrackingError, { maximumAge: 3000, timeout: 5000, enableHighAccuracy: true});
+		 document.getElementById('DevicePlatform').innerHTML = device.platform;
+		 document.getElementById('DeviceModel').innerHTML = device.model;
+		 document.getElementById('DeviceID').innerHTML = device.uuid;
+		 document.getElementById('DeviceVersion').innerHTML = device.version;
+		 document.getElementById('ConnectionType').innerHTML = navigator.connection.type;
+    }
+};
 
-	function onSuccess(position) {
+	function onTrackingSuccess(position) {
 		 document.getElementById('Longitude').innerHTML = position.coords.longitude;
 		 document.getElementById('Latitude').innerHTML = position.coords.latitude;
 		 document.getElementById('Altitude').innerHTML = position.coords.altitude;
@@ -52,26 +55,9 @@ var app = {
 		 document.getElementById('Heading').innerHTML = position.coords.heading;
 		 document.getElementById('Speed').innerHTML = position.coords.speed;
 	 	 document.getElementById('Timestamp').innerHTML = position.timestamp;
-	}
+	};
 
-	function onError(error) {
+	function onTrackingError(error) {
     	alert('code: '    + error.code    + '\n' +
           'message: ' + error.message + '\n');
-	}
-
-
-		 document.getElementById('DevicePlatform').innerHTML = device.platform;
-		 document.getElementById('DeviceModel').innerHTML = device.model;
-		 document.getElementById('DeviceID').innerHTML = device.uuid;
-		 document.getElementById('DeviceVersion').innerHTML = device.version;
-		 document.getElementById('ConnectionType').innerHTML = navigator.connection.type;
-        //var parentElement = document.getElementById(id);
-        //var listeningElement = parentElement.querySelector('.listening');
-        //var receivedElement = parentElement.querySelector('.received');
-
-        //listeningElement.setAttribute('style', 'display:none;');
-        //receivedElement.setAttribute('style', 'display:block;');
-
-        //console.log('Received Event: ' + id);
-    }
-};
+	};
