@@ -144,14 +144,14 @@
 			$(document).ready(function() {
 				var fontSize = $(window).width()/10;
 				alert(fontSize);
-				$('YourMPH').style('font-size', fontSize);
-				//document.getElementById('YourMPH').style.font-size=fontSize+'px';
+				//$('YourMPH').style('font-size', fontSize);
+				document.getElementById('YourMPH').style.font-size=fontSize+'px';
 
 				$(window).resize(function() {
 					var fontSize = $(window).width()/10;
 					alert(fontSize);
-					//document.getElementById('YourMPH').style.font-size=fontSize+'px';
-					$('YourMPH').style('font-size', fontSize);
+					document.getElementById('YourMPH').style.font-size=fontSize+'px';
+					//$('YourMPH').style('font-size', fontSize);
 				});
 			});
         </script>
