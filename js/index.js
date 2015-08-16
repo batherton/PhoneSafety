@@ -55,6 +55,14 @@ var app = {
 		 document.getElementById('Heading').innerHTML = position.coords.heading;
 		 document.getElementById('Speed').innerHTML = position.coords.speed;
 	 	 document.getElementById('Timestamp').innerHTML = position.timestamp;
+
+	 	 if (position.coords.speed > 14){
+			 document.getElementById('systemstatus').style.backgroundColor="red";
+			 document.getElementById('systemstatus').innerHTML = "Calls and Texting Disabled"
+		 }else{
+			 document.getElementById('systemstatus').style.backgroundColor="green";
+			 document.getElementById('systemstatus').innerHTML = "Calls and Texting Enabled"
+		 }
 	};
 
 	function onTrackingError(error) {
