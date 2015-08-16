@@ -142,15 +142,15 @@
 			//window.plugins.headsetdetection.detect(function(detected) {alert(detected)})
 
 			$(document).ready(function() {
-				var fontSize = $(window).width()/10+'px';
+				var fontSize = $(window).width()/10;
 				alert(fontSize);
 				//$('YourMPH').css('font-size', fontSize);
-				document.getElementById('YourMPH').style.font-size=fontSize;
+				document.getElementById('YourMPH').style.font-size=fontSize+'px';
 
 				$(window).resize(function() {
-					var fontSize = $(window).width()/10+'px';
+					var fontSize = $(window).width()/10;
 					alert(fontSize);
-					document.getElementById('YourMPH').style.font-size=fontSize;
+					document.getElementById('YourMPH').style.font-size=fontSize+'px';
 					//$('YourMPH').css('font-size', fontSize);
 				});
 			});
