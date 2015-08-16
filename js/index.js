@@ -61,26 +61,26 @@ var app = {
 						 document.getElementById('Speed').innerHTML = position.coords.speed;
 					 	 document.getElementById('Timestamp').innerHTML = position.timestamp;
 
-			        	 var http = new XMLHttpRequest();
-						 var url = "http://www.loadstatus.com/Tracking/";
-						 var params = "DeviceID=1";
-						 var params = params+"&Longitude="+position.coords.latitude;
-						 var params = params+"&Latitude="+position.coords.longitude;
-						 var params = params+"&Altitude="+position.coords.altitude;
-						 var params = params+"&Accuracy="+position.coords.accuracy;
-						 var params = params+"&AltitudeAccuracy="+position.coords.altitudeAccuracy;
-						 var params = params+"&Heading="+position.coords.heading;
-						 var params = params+"&Speed="+position.coords.speed;
-						 var params = params+"&TimeStamp="+position.timestamp;
-						 http.open("POST", url, true);
-						 http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-						 http.setRequestHeader("Content-length", params.length);
-						 http.setRequestHeader("Connection", "close");
-						 http.onreadystatechange = function() {
-						    if(http.readyState == 4) {
-			        	    	    }
-						 }
-						 http.send(params);
+			        	 //var http = new XMLHttpRequest();
+						 //var url = "http://www.loadstatus.com/Tracking/";
+						 //var params = "DeviceID=1";
+						 //var params = params+"&Longitude="+position.coords.latitude;
+						 //var params = params+"&Latitude="+position.coords.longitude;
+						 //var params = params+"&Altitude="+position.coords.altitude;
+						 //var params = params+"&Accuracy="+position.coords.accuracy;
+						 //var params = params+"&AltitudeAccuracy="+position.coords.altitudeAccuracy;
+						 //var params = params+"&Heading="+position.coords.heading;
+						 //var params = params+"&Speed="+position.coords.speed;
+						 //var params = params+"&TimeStamp="+position.timestamp;
+						 //http.open("POST", url, true);
+						 //http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+						 //http.setRequestHeader("Content-length", params.length);
+						 //http.setRequestHeader("Connection", "close");
+						 //http.onreadystatechange = function() {
+						 //   if(http.readyState == 4) {
+			        	 //   	    }
+						 //}
+						 //http.send(params);
 				};
 
 				function onTrackingError(error) {
@@ -126,14 +126,6 @@ var app = {
 
 
 //--------------------------------------------------------------
-
-
-
-
-
-
-
-
 
 
     },
