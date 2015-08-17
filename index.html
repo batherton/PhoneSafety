@@ -22,19 +22,7 @@
 
         <div class="MainDiv" id="MainDiv">
 		<br>
-<input type="hidden" id="Longitude" value="">
-<input type="hidden" id="Latitude" value="">
-<input type="hidden" id="Altitude" value="">
-<input type="hidden" id="Accuracy" value="">
-<input type="hidden" id="AltitudeAccuracy" value="">
-<input type="hidden" id="Heading" value="">
-<input type="hidden" id="Speed" value="">
-<input type="hidden" id="Timestamp" value="">
-<input type="hidden" id="DevicePlatform" value="">
-<input type="hidden" id="DeviceModel" value="">
-<input type="hidden" id="DeviceID" value="">
-<input type="hidden" id="DeviceVersion" value="">
-<input type="hidden" id="ConnectionType" value="">
+
 		<table width="100%" cellpadding="0" cellspacing="0" border="0">
 		 <tr>
 		  <td height="10"></td>
@@ -47,9 +35,30 @@
 		 </tr>
 		</table>
 		<br><br>
-		<button onclick="detectHeadphones()">headphone detected?</button>
-		<br><br><br><br><br><br>
+		<!--<button onclick="detectHeadphones()">headphone detected?</button>-->
+		<button onclick="notifyalert()">alert</button>
+		<br><br><br>
+		<button onclick="notifybeep()">Beep</button>
+				<br><br><br>
+		<button onclick="Vibrate()">Vibrate</button>
         </div>
+
+        <input type="hidden" id="Longitude" value="">
+		<input type="hidden" id="Latitude" value="">
+		<input type="hidden" id="Altitude" value="">
+		<input type="hidden" id="Accuracy" value="">
+		<input type="hidden" id="AltitudeAccuracy" value="">
+		<input type="hidden" id="Heading" value="">
+		<input type="hidden" id="Speed" value="">
+		<input type="hidden" id="Timestamp" value="">
+		<input type="hidden" id="DevicePlatform" value="">
+		<input type="hidden" id="DeviceModel" value="">
+		<input type="hidden" id="DeviceID" value="">
+		<input type="hidden" id="DeviceVersion" value="">
+		<input type="hidden" id="ConnectionType" value="">
+		<input type="hidden" id="PassengerMode" value="">
+		<input type="hidden" id="EmergencyCall" value="">
+
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
@@ -68,6 +77,27 @@
 			//window.plugins.headsetdetection.detect(function(detected) {alert(detected)})
 
 
+
+function alertDismissed() {
+    // do something
+}
+
+function notifyalert(){
+navigator.notification.alert(
+    'You are the winner!',  // message
+    alertDismissed,         // callback
+    'Game Over',            // title
+    'Done'                  // buttonName
+);
+}
+
+function notifybeep(){
+navigator.notification.beep(2);
+}
+
+function Vibrate(){
+navigator.vibrate([3000]);
+}
         </script>
     </body>
 </html>
