@@ -51,10 +51,12 @@ var app = {
 			 	  document.getElementById('systemphonestatus').innerHTML = "Headset Connected<br>Phone Enabled";
 			    }
 			  })
-		    }else{
-			 document.getElementById('systemtextstatus').style.backgroundColor="red";
-			 document.getElementById('systemtextstatus').innerHTML = "Texting Disabled";
-		    }
+
+		     }else{
+				 				 alert('Dont check for headset');
+			  document.getElementById('systemtextstatus').style.backgroundColor="red";
+			  document.getElementById('systemtextstatus').innerHTML = "Texting Disabled";
+		     }
 		 }else{
 			 document.getElementById('systemtextstatus').style.backgroundColor="green";
 			 document.getElementById('systemtextstatus').innerHTML = "Texting Enabled";
