@@ -39,6 +39,7 @@ var app = {
 	 	 if (position.coords.speed > 6.71){
 
 			 if (document.getElementById('checkforheadset').value == "1"){
+				 alert('check for headset');
 			  window.plugins.headsetdetection.detect(
 			  function(detected){
 			    if(!detected){
