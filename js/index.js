@@ -38,25 +38,25 @@ var app = {
 
 	 	 if (position.coords.speed > 6.71){
 
-			 if (document.getElementById('checkforheadset').value == "1"){
+			// if (document.getElementById('checkforheadset').value == "1"){
 			  //alert('check for headset');
-			  window.plugins.headsetdetection.detect(
-			  function(detected){
-			    if(!detected){
+			//  window.plugins.headsetdetection.detect(
+			//  function(detected){
+			//    if(!detected){
 			      //alert("No headphone detected");
 			  	  document.getElementById('systemphonestatus').style.backgroundColor="red";
 			 	  document.getElementById('systemphonestatus').innerHTML = "Phone Disabled";
-			    }else{
-			 	  document.getElementById('systemphonestatus').style.backgroundColor="green";
-			 	  document.getElementById('systemphonestatus').innerHTML = "Headset Connected<br>Phone Enabled";
-			    }
-			  });
+			//    }else{
+			// 	  document.getElementById('systemphonestatus').style.backgroundColor="green";
+			// 	  document.getElementById('systemphonestatus').innerHTML = "Headset Connected<br>Phone Enabled";
+			//    }
+			//  });
 
-		     }else{
+		    // }else{
 			  //alert('Dont check for headset');
 			  document.getElementById('systemtextstatus').style.backgroundColor="red";
 			  document.getElementById('systemtextstatus').innerHTML = "Texting Disabled";
-		     }
+		    // }
 		 }else{
 			 document.getElementById('systemtextstatus').style.backgroundColor="green";
 			 document.getElementById('systemtextstatus').innerHTML = "Texting Enabled";
