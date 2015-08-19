@@ -56,6 +56,8 @@ var app = {
 			  //alert('Dont check for headset');
 			  document.getElementById('systemtextstatus').style.backgroundColor="red";
 			  document.getElementById('systemtextstatus').innerHTML = "Texting Disabled";
+			  document.getElementById('systemphonestatus').style.backgroundColor="red";
+			  document.getElementById('systemphonestatus').innerHTML = "Phone Disabled";
 		     }
 		 }else{
 			 document.getElementById('systemtextstatus').style.backgroundColor="green";
